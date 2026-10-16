@@ -15,3 +15,8 @@
 
 ### Commands
 - Run with `pip install -e . && run` or `uvicorn backend.main:app --reload`
+
+### Learnings
+- FastAPI зависимости устанавливаются через `pip install fastapi uvicorn --break-system-packages --target .venv` если нет прав на систему
+- Удалить `.venv` из git перед коммитом: `git reset HEAD -- .venv && rm -rf .venv`
+- Push в GitHub требует аутентификации - использовать cloud_git для авторизованного push

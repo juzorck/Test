@@ -16,7 +16,7 @@ async def index(request: Request):
     items_list = get_items()
     
     tasks_html = "".join(f"<li>{escape(items_list[i].name)} - {escape(str(items_list[i].points))} баллов</li>" for i in items_list)
-    pay_html = "".join(f"<li>{escape(get_pay(user)[i].name)} - {escape(str(get_pay(user)[i].points))} баллов</li>" for i in get_pay(user))
+    pay_html = "".join(f"<li>{escape(item.name)} - {escape(str(item.points))} баллов</li>" for item in get_pay(user))
     options_html = "".join(f'<option value="{i}">{escape(items_list[i].name)}</option>' for i in items_list)
     
     return HTMLResponse(f"""<!DOCTYPE html>
