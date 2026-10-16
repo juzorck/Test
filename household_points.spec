@@ -3,9 +3,9 @@
 
 a = Analysis(
     ['run_server.py'],
-    pathex=[],
+    pathex=['.venv'],
     binaries=[],
-    datas=[('.venv', 'fastapi'), ('.venv', 'uvicorn'), ('.venv', 'starlette'), ('.venv', 'pydantic'), ('.venv', 'pydantic_core')],
+    datas=[],
     hiddenimports=['fastapi', 'uvicorn', 'starlette', 'pydantic', 'pydantic_core'],
     hookspath=[],
     hooksconfig={},

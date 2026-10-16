@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Запуск FastAPI приложения."""
+"""Запуск FastAPI приложения с инициализацией базы данных."""
 
 import sys
 import os

@@ -3,10 +3,15 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from html import escape
 
-from models.model import Item, create_item, get_items, set_completed, pay, get_pay, get_cashback
+from models.model import Item
+from models.database import init_db, create_item, get_items, set_completed, pay, get_pay, get_cashback
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.on_event("startup")
+async def startup():
+    init_db()
 
 items: dict[int, Item] = {}
 
